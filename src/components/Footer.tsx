@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="flex flex-col gap-8 lg:gap-0">
 
                 {/* Title - Object Sans Bold as per snippet */}
-                <h2 className="text-xl md:text-2xl lg:text-[47px] font-bold font-objectSans mb-6 lg:mb-8 leading-auto capitalize">
+                <h2 className="text-[24px] lg:text-[36px] font-bold font-objectSans mb-6 lg:mb-8 leading-[30px] tracking-[-0.0048em] lg:tracking-[-0.0072em] capitalize">
                     {t.nav.contacts}
                 </h2>
 
@@ -29,13 +29,13 @@ export default function Footer() {
                     {/* Left side: Two-column contacts - Hauora Semibold */}
                     <div className="flex flex-col md:flex-row gap-6 md:gap-12 lg:gap-16 shrink-0">
                         {/* Column 1: Связаться с нами */}
-                        <div className="text-sm md:text-base lg:text-[23px] font-semibold font-hauora leading-auto">
+                        <div className="text-[16px] lg:text-[17px] font-semibold font-hauora leading-auto">
                             <div className="text-white mb-1">{t.footer.connect}</div>
                             <a href="mailto:designkor@gmail.com" className="text-white hover:underline">designkor@gmail.com</a>
                         </div>
 
                         {/* Column 2: Операционный директор */}
-                        <div className="text-sm md:text-base lg:text-[23px] font-semibold font-hauora leading-auto">
+                        <div className="text-[16px] lg:text-[17px] font-semibold font-hauora leading-auto">
                             <div className="text-white mb-1">{t.footer.ops}</div>
                             <div>Арсен Ш.</div>
                             <a href="mailto:arsen@design.kor" className="text-white hover:underline">arsen@design.kor</a>
@@ -71,8 +71,8 @@ export default function Footer() {
                                     )}
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-zinc-600 text-[23px] font-normal font-hauora leading-auto">{member.name}</span>
-                                    <span className="text-zinc-600 text-[16px] font-normal font-hauora uppercase tracking-wider leading-auto">{member.role}</span>
+                                    <span className="text-zinc-600 text-[17px] font-normal font-hauora leading-auto">{member.name}</span>
+                                    <span className="text-zinc-600 text-[17px] font-normal font-hauora uppercase tracking-wider leading-auto">{member.role}</span>
                                 </div>
                             </div>
                         ))}
@@ -83,7 +83,7 @@ export default function Footer() {
             {/* Social Links - Hauora Semibold */}
             <div className="w-full mt-12 md:mt-16 lg:mt-24 mb-8 md:mb-10 flex flex-wrap justify-between items-center gap-4 lg:gap-6">
                 {t.socials.map((social) => (
-                    <Link key={social} href="#" className="text-white text-sm md:text-base lg:text-[31px] font-semibold font-hauora hover:opacity-70 transition-opacity leading-auto">
+                    <Link key={social} href="#" className="text-white text-[16px] lg:text-[24px] font-semibold font-hauora hover:opacity-70 transition-opacity leading-auto">
                         {social}
                     </Link>
                 ))}

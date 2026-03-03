@@ -15,9 +15,9 @@ export default function Header() {
 
     return (
         // FULL-WIDTH HEADER
-        <header className="fixed top-0 left-0 w-full z-50 mix-blend-difference text-white pointer-events-none px-4 md:px-8 lg:px-12">
+        <header className="fixed top-0 left-0 w-full z-50 mix-blend-difference text-white pointer-events-none px-5 md:px-10 lg:px-[60px]">
             {/* Logo */}
-            <Link href="/" className="absolute left-4 md:left-8 lg:left-12 top-6 md:top-8 pointer-events-auto block">
+            <Link href="/" className="absolute left-5 md:left-10 lg:left-[60px] top-6 md:top-8 pointer-events-auto block">
                 <Image
                     src="/images/logo.png"
                     alt="DESIGNKOR"
@@ -28,14 +28,14 @@ export default function Header() {
             </Link>
 
             {/* Desktop Menu - Object Sans Bold as per snippet */}
-            <nav className="hidden md:flex absolute right-32 lg:right-40 top-6 md:top-8 gap-6 lg:gap-10 items-center pointer-events-auto font-bold text-xs md:text-sm font-objectSans">
+            <nav className="hidden md:flex absolute right-36 lg:right-[160px] top-6 md:top-8 gap-6 lg:gap-10 items-center pointer-events-auto font-bold text-[14px] font-objectSans">
                 <Link href="#portfolio" className="hover:opacity-70 transition-opacity whitespace-nowrap">{t.portfolio}</Link>
                 <Link href="#about" className="hover:opacity-70 transition-opacity whitespace-nowrap">{t.about}</Link>
                 <Link href="#contacts" className="hover:opacity-70 transition-opacity whitespace-nowrap">{t.contacts}</Link>
             </nav>
 
             {/* Language Switcher - smaller, fits properly */}
-            <div className="hidden md:flex absolute right-4 md:right-8 lg:right-12 top-5 md:top-7 px-3 py-1.5 items-center justify-center border border-white/50 rounded-full pointer-events-auto text-xs font-inter gap-1">
+            <div className="hidden md:flex absolute right-4 md:right-8 lg:right-[60px] top-5 md:top-7 px-3 py-1.5 items-center justify-center border border-white/50 rounded-full pointer-events-auto text-[14px] font-inter gap-1">
                 <button
                     onClick={() => setLanguage("ru")}
                     className={`transition-colors ${language === 'ru' ? 'text-white' : 'text-neutral-500'}`}
