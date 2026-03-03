@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import ProjectClient from "@/components/ProjectClient";
 
 // Generate static params for all projects
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     const projectsDir = path.join(process.cwd(), "public/images/cases");
     try {
@@ -13,8 +15,7 @@ export async function generateStaticParams() {
             const fullPath = path.join(projectsDir, folder);
             const stat = await fs.promises.stat(fullPath);
             if (stat.isDirectory()) {
-                // Encode folder names with spaces for URL compatibility
-                params.push({ slug: encodeURIComponent(folder) });
+                params.push({ slug: folder });
             }
         }
         return params;
@@ -24,9 +25,7 @@ export async function generateStaticParams() {
 }
 
 async function getProjectAssets(slug: string) {
-    // Decode the slug to get the actual folder name
-    const decodedSlug = decodeURIComponent(slug);
-    const projectDir = path.join(process.cwd(), "public/images/cases", decodedSlug);
+    const projectDir = path.join(process.cwd(), "public/images/cases", slug);
     try {
         const files = await fs.promises.readdir(projectDir);
         return files.filter(file =>
@@ -51,7 +50,5 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         notFound();
     }
 
-    // Pass the decoded slug to the client component
-    const decodedSlug = decodeURIComponent(slug);
-    return <ProjectClient slug={decodedSlug} assets={assets} />;
+    return <ProjectClient slug={slug} assets={assets} />;
 }

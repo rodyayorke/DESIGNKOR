@@ -33,15 +33,26 @@ export default function ProjectClient({ slug, assets }: { slug: string, assets: 
                 <div className="w-full flex flex-col">
                     {assets.map((file) => (
                         <div key={file} className="w-full">
-                            <Image
-                                src={`/images/cases/${slug}/${file}`}
-                                alt={file}
-                                width={1920}
-                                height={1080}
-                                className="w-full h-auto block"
-                                quality={100}
-                                unoptimized={file.endsWith('.gif') || file.endsWith('.mp4')}
-                            />
+                            {file.toLowerCase().endsWith('.mp4') ? (
+                                <video
+                                    src={`/images/cases/${slug}/${file}`}
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    className="w-full h-auto block"
+                                />
+                            ) : (
+                                <Image
+                                    src={`/images/cases/${slug}/${file}`}
+                                    alt={file}
+                                    width={1920}
+                                    height={1080}
+                                    className="w-full h-auto block"
+                                    quality={100}
+                                    unoptimized={file.toLowerCase().endsWith('.gif')}
+                                />
+                            )}
                         </div>
                     ))}
                 </div>
