@@ -127,7 +127,7 @@ export default function Home() {
                 </section>
 
                 {/* About Section - PP Object Sans Bold */}
-                <section id="about" className="pt-8 md:pt-12 pb-12 md:pb-16 border-t border-stone-800/50">
+                <section id="about" className="pt-8 md:pt-12 pb-[38px] lg:pb-[60px] border-t border-stone-800/50">
                     <h2 className="text-[24px] lg:text-[36px] font-bold font-objectSans mb-8 md:mb-12 leading-[30px] tracking-[-0.0048em] lg:tracking-[-0.0072em] capitalize">{t.sections.about}</h2>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24">
@@ -159,12 +159,12 @@ export default function Home() {
                 </section>
             </div>
 
-            <section className="mt-12 md:mt-16 lg:mt-24">
+            <section className="mt-0">
                 <Marquee />
             </section>
 
             <div className="w-full px-5 md:px-10 lg:px-[60px]">
-                <section className="mb-12 md:mb-20">
+                <section className="pt-[33px] lg:pt-[60px] mb-[30px] lg:mb-[60px]">
                     <ClientGrid />
                 </section>
 

@@ -11,9 +11,9 @@ const clientLogos = [
 
 export default function ClientGrid() {
     return (
-        <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 items-center">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-12 lg:gap-16 items-center">
             {clientLogos.map((logo, i) => (
-                <div key={i} className="h-4 md:h-6 lg:h-12 w-[calc(50%-1rem)] md:w-[calc(33.333%-2rem)] lg:w-[calc(20%-3.2rem)] relative grayscale brightness-[2] opacity-70 hover:opacity-100 transition-opacity">
+                <div key={i} className="h-4 md:h-6 lg:h-12 w-[calc(33.333%-8px)] md:w-[calc(33.333%-2rem)] lg:w-[calc(20%-3.2rem)] relative grayscale brightness-[2] opacity-70 hover:opacity-100 transition-opacity">
                     <Image
                         src={`/images/clients/${logo}`}
                         alt={logo.replace('.png', '')}
