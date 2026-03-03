@@ -2,6 +2,17 @@ import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-static";
+
+export async function generateStaticParams() {
+    const casesPath = path.join(process.cwd(), "public", "images", "cases");
+    const folders = fs.readdirSync(casesPath).filter(
+        folder => !folder.startsWith('.') &&
+        fs.statSync(path.join(casesPath, folder)).isDirectory()
+    );
+    return folders.map(folder => ({ slug: folder }));
+}
+
 export async function GET(
     request: Request,
     { params }: { params: Promise<{ slug: string }> }
