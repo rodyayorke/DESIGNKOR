@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Desktop_Commander__list_directory",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where npm)",
+      "mcp__Desktop_Commander__start_process",
+      "mcp__Desktop_Commander__read_process_output",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(git status)",
+      "Bash(gh auth status)",
+      "Bash(git config --global user.name)",
+      "Bash(git config --global user.email)",
+      "Bash(where git)",
+      "Bash(where gh)",
+      "Bash(/c/Program Files/Git/cmd/git.exe config --global user.name)",
+      "Bash(/c/Program Files/Git/cmd/git.exe config --global user.email)",
+      "Bash(\"/c/Program Files/Git/cmd/git.exe\" config --global user.name)",
+      "Bash(\"/c/Program Files/Git/cmd/git.exe\" config --global user.email)",
+      "Bash(\"/c/Program Files/Git/cmd/git.exe\" config --global --list)",
+      "mcp__Desktop_Commander__interact_with_process",
+      "mcp__Desktop_Commander__list_sessions",
+      "mcp__Desktop_Commander__write_file",
+      "mcp__Desktop_Commander__read_file"
+    ]
+  }
+}

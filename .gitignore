@@ -1,0 +1,4 @@
+node_modules/
+.next/
+build_error.log
+build_error_2.log
