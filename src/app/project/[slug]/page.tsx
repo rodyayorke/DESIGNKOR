@@ -4,8 +4,6 @@ import { notFound } from "next/navigation";
 import ProjectClient from "@/components/ProjectClient";
 
 // Generate static params for all projects
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
     const projectsDir = path.join(process.cwd(), "public/images/cases");
     try {
@@ -25,7 +23,8 @@ export async function generateStaticParams() {
 }
 
 async function getProjectAssets(slug: string) {
-    const projectDir = path.join(process.cwd(), "public/images/cases", slug);
+    const decodedSlug = decodeURIComponent(slug);
+    const projectDir = path.join(process.cwd(), "public/images/cases", decodedSlug);
     try {
         const files = await fs.promises.readdir(projectDir);
         return files.filter(file =>
@@ -50,5 +49,5 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         notFound();
     }
 
-    return <ProjectClient slug={slug} assets={assets} />;
+    return <ProjectClient slug={decodeURIComponent(slug)} assets={assets} />;
 }
