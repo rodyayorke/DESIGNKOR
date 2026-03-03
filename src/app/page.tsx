@@ -64,9 +64,9 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col gap-4 lg:gap-5 w-full lg:w-auto lg:ml-auto">
-                        <div className="flex gap-2 lg:gap-4 flex-wrap text-white">
+                        <div className="flex gap-2 lg:gap-4 text-white overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                             {t.hero.tags.map(tag => (
-                                <div key={tag} className="px-5 lg:px-6 py-2.5 lg:py-3 rounded-full border border-stone-600 text-[2.5vw] md:text-xs lg:text-[23px] font-semibold font-hauora whitespace-nowrap leading-auto">
+                                <div key={tag} className="shrink-0 px-3 md:px-5 lg:px-6 py-2 md:py-2.5 lg:py-3 rounded-full border border-stone-600 text-[2.5vw] md:text-xs lg:text-[23px] font-semibold font-hauora whitespace-nowrap leading-auto">
                                     {tag}
                                 </div>
                             ))}

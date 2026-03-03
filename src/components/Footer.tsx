@@ -10,7 +10,7 @@ export default function Footer() {
     const t = translations[language];
 
     return (
-        <footer id="contacts" className="relative w-full bg-black text-white pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-12 overflow-hidden">
+        <footer id="contacts" className="relative w-full bg-black text-white pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-12">
 
             {/* Divider line before contacts as in snippet */}
             <div className="w-full h-px bg-stone-500/50 mb-12 md:mb-16"></div>
@@ -42,26 +42,37 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Right side: Team photos - VERY LARGE CARDS */}
-                    <div className="flex gap-4 lg:gap-8 w-full lg:w-auto lg:justify-end overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
+                    {/* Team: Mobile slider */}
+                    <div className="block lg:hidden overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden mt-2">
+                        <div className="flex gap-4 w-max">
+                            {t.team.map((member, i) => (
+                                <div key={i} className="flex flex-col gap-3 shrink-0 w-[110px]">
+                                    <div className="w-full aspect-[140/176] bg-neutral-800 rounded-sm overflow-hidden relative grayscale hover:grayscale-0 hover:invert transition-all duration-500">
+                                        {member.image && (
+                                            <Image src={`/images/team/${member.image}`} alt={member.name} fill className="object-cover" />
+                                        )}
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-zinc-600 text-xs font-normal font-hauora leading-auto">{member.name}</span>
+                                        <span className="text-zinc-600 text-[9px] font-normal font-hauora uppercase tracking-wider leading-auto">{member.role}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Team: Desktop */}
+                    <div className="hidden lg:flex gap-8 w-auto justify-end">
                         {t.team.map((member, i) => (
-                            <div key={i} className="flex flex-col gap-3 shrink-0 w-[120px] md:w-[150px] lg:w-[240px]">
-                                {/* Larger photo with INVERT on hover */}
+                            <div key={i} className="flex flex-col gap-3 shrink-0 w-[240px]">
                                 <div className="w-full aspect-[140/176] bg-neutral-800 rounded-sm overflow-hidden relative grayscale hover:grayscale-0 hover:invert transition-all duration-500">
                                     {member.image && (
-                                        <Image
-                                            src={`/images/team/${member.image}`}
-                                            alt={member.name}
-                                            fill
-                                            className="object-cover"
-                                        />
+                                        <Image src={`/images/team/${member.image}`} alt={member.name} fill className="object-cover" />
                                     )}
                                 </div>
                                 <div className="flex flex-col">
-                                    {/* Team name: Hauora Normal as per snippet */}
-                                    <span className="text-zinc-600 text-xs md:text-sm lg:text-[23px] font-normal font-hauora leading-auto">{member.name}</span>
-                                    {/* Team role: Hauora Normal text-xs as per snippet */}
-                                    <span className="text-zinc-600 text-[9px] md:text-[10px] lg:text-[16px] font-normal font-hauora uppercase tracking-wider leading-auto">{member.role}</span>
+                                    <span className="text-zinc-600 text-[23px] font-normal font-hauora leading-auto">{member.name}</span>
+                                    <span className="text-zinc-600 text-[16px] font-normal font-hauora uppercase tracking-wider leading-auto">{member.role}</span>
                                 </div>
                             </div>
                         ))}
